@@ -5,6 +5,7 @@ Thank you for your interest in contributing to the Windsurf Documentation Framew
 ## 🤝 How to Contribute
 
 ### 1. Fork and Clone
+
 1. Fork the repository
 2. Clone your fork:
    ```bash
@@ -17,6 +18,7 @@ Thank you for your interest in contributing to the Windsurf Documentation Framew
    ```
 
 ### 2. Create a Branch
+
 ```bash
 git checkout -b feature/your-feature-name
 # or
@@ -24,12 +26,14 @@ git checkout -b fix/your-fix-name
 ```
 
 ### 3. Make Changes
+
 1. Follow the existing style and format
 2. Update relevant documentation
 3. Test any code examples
 4. Update cross-references if needed
 
 ### 4. Commit Changes
+
 ```bash
 git add .
 git commit -m "type(scope): description"
@@ -45,6 +49,7 @@ Follow our commit convention:
 - `chore`: Maintenance tasks
 
 ### 5. Submit Pull Request
+
 1. Push to your fork
 2. Create a Pull Request from your branch
 3. Describe your changes in detail
@@ -53,6 +58,7 @@ Follow our commit convention:
 ## 📋 Documentation Guidelines
 
 ### Style
+
 - Use clear, concise language
 - Include practical examples
 - Maintain consistent formatting
@@ -60,6 +66,7 @@ Follow our commit convention:
 - Test code samples
 
 ### Structure
+
 - Follow existing hierarchy
 - Update index when needed
 - Maintain cross-references
@@ -67,17 +74,19 @@ Follow our commit convention:
 
 ## 🔍 Review Process
 
-1. Documentation Review
-   - Clarity and accuracy
-   - Format consistency
-   - Cross-reference validity
-   - Example completeness
+### Documentation Review
 
-2. Code Review
-   - Style consistency
-   - Error handling
-   - Best practices
-   - Documentation
+- Clarity and accuracy
+- Format consistency
+- Cross-reference validity
+- Example completeness
+
+### Code Review
+
+- Style consistency
+- Error handling
+- Best practices
+- Documentation
 
 ## 🐛 Reporting Issues
 

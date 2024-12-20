@@ -9,6 +9,7 @@ A comprehensive documentation framework for modern software projects, focusing o
 - **Best Practices**: Industry-standard development and maintenance procedures
 - **Accessibility Focus**: Built-in accessibility and internationalization guidelines
 - **DevOps Integration**: Complete deployment and operations documentation
+- **Quality Checks**: Automated markdown linting, spell checking, and link validation
 
 ## 📚 Documentation Structure
 

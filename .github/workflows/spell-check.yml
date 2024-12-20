@@ -10,20 +10,10 @@ on:
 
 jobs:
   spellcheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: streetsidesoftware/cspell-action@v2
         with:
           files: '**/*.md'
-          inline: warning
-          config: |
-            {
-              "language": "en",
-              "words": [
-                "Windsurf",
-                "markdownlint",
-                "cspell",
-                "lychee"
-              ]
-            }
+          config: 'cspell.json'

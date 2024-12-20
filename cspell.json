@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Windsurf",
+    "markdownlint",
+    "cspell",
+    "lychee",
+    "OWASP",
+    "PRs",
+    "markdownlint",
+    "lycheeverse",
+    "streetsidesoftware"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    ".git/**"
+  ]
+}

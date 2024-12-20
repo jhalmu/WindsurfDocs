@@ -10,6 +10,7 @@ A comprehensive documentation framework for modern software projects, focusing o
 - **Accessibility Focus**: Built-in accessibility and internationalization guidelines
 - **DevOps Integration**: Complete deployment and operations documentation
 - **Quality Checks**: Automated markdown linting, spell checking, and link validation
+- **Node.js Integration**: NPM scripts for local development and CI/CD
 
 ## 📚 Documentation Structure
 

@@ -8,14 +8,17 @@ Thank you for your interest in contributing to the Windsurf Documentation Framew
 
 1. Fork the repository
 2. Clone your fork:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/WindsurfDocs.git
-   cd WindsurfDocs
-   ```
+
+```bash
+git clone https://github.com/YOUR_USERNAME/WindsurfDocs.git
+cd WindsurfDocs
+```
+
 3. Add upstream remote:
-   ```bash
-   git remote add upstream https://github.com/jhalmu/WindsurfDocs.git
-   ```
+
+```bash
+git remote add upstream https://github.com/jhalmu/WindsurfDocs.git
+```
 
 ### 2. Create a Branch
 
@@ -40,6 +43,7 @@ git commit -m "type(scope): description"
 ```
 
 Follow our commit convention:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
@@ -99,6 +103,7 @@ Follow our commit convention:
 ## 📚 Documentation Updates
 
 When updating documentation:
+
 1. Follow markdown style guide
 2. Update related documents
 3. Verify all links work
@@ -115,6 +120,7 @@ When updating documentation:
 ## ✅ Checklist
 
 Before submitting:
+
 - [ ] Documentation follows style guide
 - [ ] All links are valid
 - [ ] Code examples work

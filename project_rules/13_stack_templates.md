@@ -6,41 +6,50 @@
 > - Deployment platforms: [09_deployment_platforms.md](09_deployment_platforms.md)
 > - Database migrations: [14_database_migrations.md](14_database_migrations.md)
 
+
 ## Stack Decision Questions
 
 Before implementation, ask these questions:
 
-```markdown
+
 1. Frontend Requirements:
+
    - Framework preference? (React, Vue, Svelte, Angular)
    - SSR requirements? (Next.js, Nuxt, SvelteKit)
    - Static vs Dynamic?
    - UI component library preferences?
 
+
 2. Backend Requirements:
+
    - Language preference? (Node.js, Python, Go, Java, Rust)
    - Framework preference? (Express, FastAPI, Gin, Spring, Actix)
    - API architecture? (REST, GraphQL, gRPC)
    - Authentication requirements?
 
+
 3. Database Requirements:
+
    - Development database? (SQLite, PostgreSQL, MySQL)
    - Production database? (PostgreSQL, MySQL, MongoDB)
    - ORM preference?
    - Migration strategy?
 
+
 4. Development Environment:
+
    - Local development setup?
    - CI/CD requirements?
    - Containerization needs?
    - Development team size?
-```
+
 
 ## Template Path 1: Modern JavaScript Full Stack
 
 ### Development Environment
 
 #### Frontend (Next.js)
+
 ```yaml
 # docker-compose.dev.frontend.yml
 version: '3.8'
@@ -60,6 +69,7 @@ services:
 ```
 
 #### Backend (Node.js/Express)
+
 ```yaml
 # docker-compose.dev.backend.yml
 version: '3.8'
@@ -97,6 +107,7 @@ volumes:
 ### Production Environment
 
 #### Frontend (Next.js)
+
 ```yaml
 # docker-compose.prod.frontend.yml
 version: '3.8'
@@ -113,6 +124,7 @@ services:
 ```
 
 #### Backend (Node.js/Express)
+
 ```yaml
 # docker-compose.prod.backend.yml
 version: '3.8'
@@ -133,6 +145,7 @@ services:
 ### Development Environment
 
 #### Frontend (Vue.js)
+
 ```yaml
 # docker-compose.dev.frontend.yml
 version: '3.8'
@@ -152,6 +165,7 @@ services:
 ```
 
 #### Backend (Python/FastAPI)
+
 ```yaml
 # docker-compose.dev.backend.yml
 version: '3.8'
@@ -189,6 +203,7 @@ volumes:
 ### Production Environment
 
 #### Frontend (Vue.js)
+
 ```yaml
 # docker-compose.prod.frontend.yml
 version: '3.8'
@@ -205,6 +220,7 @@ services:
 ```
 
 #### Backend (Python/FastAPI)
+
 ```yaml
 # docker-compose.prod.backend.yml
 version: '3.8'
@@ -227,7 +243,9 @@ services:
 > - For monitoring setup: See [10_troubleshooting.md](10_troubleshooting.md)
 > - For AI integration: See [00_ai_guidelines.md](00_ai_guidelines.md)
 
+
 ### 1. Kubernetes Templates
+
 ```yaml
 # deployment.yaml
 apiVersion: apps/v1
@@ -271,6 +289,7 @@ spec:
 ```
 
 ### 2. Service Mesh Configuration
+
 ```yaml
 # istio-config.yaml
 apiVersion: networking.istio.io/v1alpha3
@@ -299,6 +318,7 @@ spec:
 ```
 
 ### 3. Helm Charts
+
 ```yaml
 # values.yaml
 replicaCount: 3
@@ -335,6 +355,7 @@ autoscaling:
 ```
 
 ### 4. Docker Compose for Development
+
 ```yaml
 # docker-compose.dev.yml
 version: '3.8'
@@ -375,6 +396,7 @@ volumes:
 ```
 
 ### 5. Multi-Stage Builds
+
 ```dockerfile
 # Dockerfile
 # Build stage
@@ -409,7 +431,9 @@ CMD ["npm", "start"]
 > - AI-driven testing: [00_ai_guidelines.md](00_ai_guidelines.md)
 > - Deployment testing: [09_deployment_platforms.md](09_deployment_platforms.md)
 
+
 ### 1. Pre-Deployment Validation
+
 ```bash
 #!/bin/bash
 # validate_yaml.sh
@@ -435,6 +459,7 @@ find . -type f \( -name "*.yml" -o -name "*.yaml" \) -exec bash -c 'validate_yam
 ```
 
 ### 2. Schema Validation
+
 ```yaml
 # .yamllint.yml
 extends: default
@@ -447,6 +472,7 @@ rules:
 ```
 
 ### 3. Environment Variable Testing
+
 ```bash
 # test_env_substitution.sh
 #!/bin/bash
@@ -477,6 +503,7 @@ find . -type f -name "docker-compose*.yml" -exec bash -c 'test_env_substitution 
 ```
 
 ### 4. CI/CD Integration
+
 ```yaml
 # .github/workflows/yaml-validation.yml
 name: YAML Validation
@@ -509,6 +536,7 @@ jobs:
 ### Development to Production
 
 #### PostgreSQL to PostgreSQL
+
 ```bash
 #!/bin/bash
 # migrate_postgres.sh
@@ -525,6 +553,7 @@ psql -h production-host -U produser -d proddb < dev_dump.sql
 ```
 
 #### SQLite to PostgreSQL
+
 ```python
 # migrate_sqlite_to_postgres.py
 from sqlalchemy import create_engine
@@ -544,6 +573,7 @@ def migrate_data():
 ```
 
 #### MySQL to PostgreSQL
+
 ```bash
 #!/bin/bash
 # migrate_mysql_to_postgres.sh
@@ -559,6 +589,7 @@ pgloader mysql://devuser:pass@localhost/devdb \
 ## Environment-Specific Configurations
 
 ### Development
+
 ```yaml
 # .env.development
 NODE_ENV=development
@@ -568,6 +599,7 @@ REDIS_URL=redis://localhost:6379
 ```
 
 ### Production
+
 ```yaml
 # .env.production
 NODE_ENV=production

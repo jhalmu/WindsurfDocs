@@ -1,0 +1,14 @@
+{
+  "name": "windsurf-docs",
+  "version": "1.0.0",
+  "description": "Windsurf Documentation Framework",
+  "scripts": {
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules --config .markdownlint.json",
+    "spell-check": "cspell '**/*.md' --config cspell.json",
+    "check-links": "lychee '**/*.md'"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.37.0",
+    "cspell": "^8.3.0"
+  }
+}

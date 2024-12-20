@@ -13,7 +13,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: streetsidesoftware/cspell-action@v2
+      - uses: actions/setup-node@v3
         with:
-          files: '**/*.md'
-          config: 'cspell.json'
+          node-version: '18'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run spell check
+        run: npm run spell-check

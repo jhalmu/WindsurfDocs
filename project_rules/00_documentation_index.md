@@ -4,6 +4,7 @@
 ## Core Development Guides
 
 ### 1. [AI Guidelines](00_ai_guidelines.md)
+
   -$2AI development principles and practices
   -$2Integration patterns and tooling
   -$2AI-driven testing strategies
@@ -12,6 +13,7 @@
 > **Key Dependencies:** Testing setup, Development workflow, Stack templates
 
 ### 2. [Project Setup](01_project_setup.md)
+
   -$2Initial project configuration
   -$2Development environment setup
   -$2Core dependencies management
@@ -20,6 +22,7 @@
 > **Key Dependencies:** Development workflow, Testing setup, Deployment
 
 ### 3. [Testing Setup](02_testing_setup.md)
+
   -$2Testing strategies and frameworks
   -$2Test automation setup
   -$2Coverage requirements
@@ -28,6 +31,7 @@
 > **Key Dependencies:** AI guidelines, Development workflow, Accessibility testing
 
 ### 4. [Development and Maintenance](03_development_and_maintenance.md)
+
   -$2Version control workflow
   -$2Code review process
   -$2Maintenance procedures
@@ -38,6 +42,7 @@
 ## Deployment and Operations
 
 ### 5. [Deployment Guide](04_deployment.md)
+
   -$2Deployment processes
   -$2Environment configuration
   -$2Release procedures
@@ -46,6 +51,7 @@
 > **Key Dependencies:** Stack templates, Deployment platforms, Troubleshooting
 
 ### 6. [Deployment Platforms](09_deployment_platforms.md)
+
   -$2Platform-specific configurations
   -$2Cloud service setup
   -$2Infrastructure management
@@ -54,6 +60,7 @@
 > **Key Dependencies:** Deployment guide, Stack templates, Troubleshooting
 
 ### 7. [Troubleshooting](10_troubleshooting.md)
+
   -$2Monitoring solutions
   -$2Problem diagnosis
   -$2Recovery procedures
@@ -64,6 +71,7 @@
 ## Technical Standards
 
 ### 8. [Accessibility and i18n](07_accessibility_i18n.md)
+
   -$2Accessibility requirements
   -$2Internationalization setup
   -$2Testing procedures
@@ -72,6 +80,7 @@
 > **Key Dependencies:** Testing setup, Development workflow, AI guidelines
 
 ### 9. [Stack Templates](13_stack_templates.md)
+
   -$2Technology stack configurations
   -$2Container orchestration
   -$2Service templates
@@ -80,6 +89,7 @@
 > **Key Dependencies:** Project setup, Deployment platforms, Database migrations
 
 ### 10. [Database Migrations](14_database_migrations.md)
+
   -$2Migration strategies
   -$2Schema management
   -$2Data transformation
@@ -104,6 +114,7 @@ graph TD
     I --> C
 
 ```text
+
 ## Quick Reference
 
 ### Development Lifecycle
@@ -111,11 +122,15 @@ graph TD
 
 1. Setup: [Project Setup](01_project_setup.md)
 
+
 1. Development: [Development and Maintenance](03_development_and_maintenance.md)
+
 
 1. Testing: [Testing Setup](02_testing_setup.md)
 
+
 1. Deployment: [Deployment Guide](04_deployment.md)
+
 
 1. Maintenance: [Troubleshooting](10_troubleshooting.md)
 
@@ -124,7 +139,9 @@ graph TD
 
 1. Templates: [Stack Templates](13_stack_templates.md)
 
+
 1. Platforms: [Deployment Platforms](09_deployment_platforms.md)
+
 
 1. Database: [Database Migrations](14_database_migrations.md)
 
@@ -133,7 +150,9 @@ graph TD
 
 1. AI Testing: [AI Guidelines](00_ai_guidelines.md)
 
+
 1. Accessibility: [Accessibility and i18n](07_accessibility_i18n.md)
+
 
 1. Monitoring: [Troubleshooting](10_troubleshooting.md)
 
@@ -144,9 +163,12 @@ graph TD
 
 1. Review [Development and Maintenance](03_development_and_maintenance.md)
 
+
 1. Follow [Testing Setup](02_testing_setup.md)
 
+
 1. Consider [AI Guidelines](00_ai_guidelines.md)
+
 
 1. Check [Accessibility and i18n](07_accessibility_i18n.md)
 
@@ -155,7 +177,9 @@ graph TD
 
 1. Follow [Deployment Guide](04_deployment.md)
 
+
 1. Review [Deployment Platforms](09_deployment_platforms.md)
+
 
 1. Monitor using [Troubleshooting](10_troubleshooting.md)
 
@@ -164,23 +188,28 @@ graph TD
 
 1. Follow [Database Migrations](14_database_migrations.md)
 
+
 1. Review [Stack Templates](13_stack_templates.md)
+
 
 1. Update [Development and Maintenance](03_development_and_maintenance.md)
 
 ## Maintenance Schedule
 
 ### Daily
+
   -$2Review logs ([Troubleshooting](10_troubleshooting.md))
   -$2Monitor performance ([Deployment Platforms](09_deployment_platforms.md))
   -$2Check alerts ([Development and Maintenance](03_development_and_maintenance.md))
 
 ### Weekly
+
   -$2Update dependencies ([Project Setup](01_project_setup.md))
   -$2Review security ([AI Guidelines](00_ai_guidelines.md))
   -$2Test accessibility ([Accessibility and i18n](07_accessibility_i18n.md))
 
 ### Monthly
+
   -$2Database maintenance ([Database Migrations](14_database_migrations.md))
   -$2Infrastructure review ([Stack Templates](13_stack_templates.md))
   -$2Documentation updates (All guides)

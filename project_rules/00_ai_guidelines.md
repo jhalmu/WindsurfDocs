@@ -11,6 +11,7 @@
 
 
 1. **Project Understanding**
+
       -$2Read and understand project requirements
     -$2Review existing codebase
     -$2Identify technical constraints
@@ -18,6 +19,7 @@
 
 
 1. **Communication Protocol**
+
       -$2Clear, concise responses
     -$2Proactive problem identification
     -$2Regular progress updates
@@ -37,6 +39,7 @@
   -$2Security constraints?
 
 ```text
+
 #### Deployment Environment
 
 ```markdown
@@ -46,6 +49,7 @@
   -$2Scaling requirements?
 
 ```text
+
 #### Security Requirements
 
 ```markdown
@@ -55,6 +59,7 @@
   -$2Compliance requirements?
 
 ```text
+
 ### 2. Technology Selection
 
 #### Frontend Framework
@@ -66,6 +71,7 @@
   -$2Browser compatibility?
 
 ```text
+
 #### Backend Architecture
 
 ```markdown
@@ -75,21 +81,25 @@
   -$2Integration requirements?
 
 ```text
+
 ## Implementation Guidelines
 
 ### 1. Code Quality Standards
+
   -$2Follow project style guide
   -$2Write self-documenting code
   -$2Include comprehensive comments
   -$2Add type annotations
 
 ### 2. Testing Requirements
+
   -$2Unit tests for core functionality
   -$2Integration tests for APIs
   -$2End-to-end tests for critical paths
   -$2Performance benchmarks
 
 ### 3. Documentation Standards
+
   -$2API documentation
   -$2Setup instructions
   -$2Deployment guides
@@ -98,18 +108,21 @@
 ## Project Context Management
 
 ### 1. State Tracking
+
   -$2Current development phase
   -$2Active feature branches
   -$2Recent changes history
   -$2Outstanding issues
 
 ### 2. Environment Context
+
   -$2Development setup
   -$2Testing environment
   -$2Production status
   -$2Tool versions
 
 ### 3. Documentation State
+
   -$2Latest updates
   -$2API changes
   -$2Architecture decisions
@@ -118,18 +131,21 @@
 ## Interaction Patterns
 
 ### 1. User Communication
+
   -$2Clear explanations
   -$2Technical accuracy
   -$2Progressive disclosure
   -$2Actionable suggestions
 
 ### 2. Problem Solving
+
   -$2Systematic approach
   -$2Root cause analysis
   -$2Solution alternatives
   -$2Implementation plan
 
 ### 3. Code Reviews
+
   -$2Security checks
   -$2Performance review
   -$2Style compliance
@@ -146,6 +162,7 @@
   -$2KISS principle
 
 ```text
+
 ### 2. Security
 
 ```markdown
@@ -155,6 +172,7 @@
   -$2Authorization
 
 ```text
+
 ### 3. Performance
 
 ```markdown
@@ -164,6 +182,7 @@
   -$2Optimization
 
 ```text
+
 ## AI Integration and Tooling
 
 > **Related Sections:**
@@ -202,6 +221,7 @@ try {
 }
 
 ```text
+
 ### 2. Integration Points
 
 ```javascript
@@ -224,6 +244,7 @@ async function reviewCode(pr) {
 }
 
 ```text
+
 ### 3. Security Measures
 
 ```javascript
@@ -255,6 +276,7 @@ const accessControl = {
 };
 
 ```text
+
 ### 4. Response Processing
 
 ```javascript
@@ -281,6 +303,7 @@ function formatResponse(response) {
 }
 
 ```text
+
 ### 5. Testing Integration
 
 ```javascript
@@ -298,6 +321,7 @@ describe('AI Service', () => {
 });
 
 ```text
+
 ## AI-Driven Testing
 
 > **Related Testing Guides:**
@@ -330,6 +354,7 @@ async function generatePropertyTests(schema) {
 }
 
 ```text
+
 ### 2. Test Maintenance
 
 ```javascript
@@ -346,6 +371,7 @@ async function analyzeCoverage(testResults) {
 }
 
 ```text
+
 ### 3. Regression Testing
 
 ```javascript
@@ -362,6 +388,7 @@ async function optimizeTestSuite(testHistory) {
 }
 
 ```text
+
 ### 4. Performance Testing
 
 ```javascript
@@ -378,6 +405,7 @@ async function generateBenchmarks(metrics) {
 }
 
 ```text
+
 ### 5. Security Testing
 
 ```javascript
@@ -394,21 +422,25 @@ async function generatePenTests(api) {
 }
 
 ```text
+
 ## Continuous Improvement
 
 ### 1. Learning
+
   -$2New technologies
   -$2Best practices
   -$2Security updates
   -$2Performance techniques
 
 ### 2. Feedback Loop
+
   -$2User feedback
   -$2Performance metrics
   -$2Error tracking
   -$2Usage patterns
 
 ### 3. Updates
+
   -$2Documentation
   -$2Dependencies
   -$2Security patches
@@ -417,12 +449,14 @@ async function generatePenTests(api) {
 ## Error Handling
 
 ### 1. Prevention
+
   -$2Input validation
   -$2Type checking
   -$2Boundary testing
   -$2Edge cases
 
 ### 2. Recovery
+
   -$2Graceful degradation
   -$2Fallback options
   -$2Data recovery
@@ -431,12 +465,14 @@ async function generatePenTests(api) {
 ## Maintenance
 
 ### 1. Code
+
   -$2Regular refactoring
   -$2Technical debt reduction
   -$2Performance optimization
   -$2Security updates
 
 ### 2. Documentation
+
   -$2Keep up-to-date
   -$2Version tracking
   -$2Change history

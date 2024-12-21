@@ -23,6 +23,7 @@ This guide covers accessibility (a11y) and internationalization (i18n) requireme
 
 
 1. Automated Testing
+
       -$2WCAG compliance checks
     -$2Color contrast validation
     -$2Screen reader compatibility
@@ -30,6 +31,7 @@ This guide covers accessibility (a11y) and internationalization (i18n) requireme
 
 
 1. Manual Testing
+
       -$2User journey validation
     -$2Device compatibility
     -$2Assistive technology testing
@@ -39,6 +41,7 @@ This guide covers accessibility (a11y) and internationalization (i18n) requireme
 
 
 1. HTML Structure
+
       -$2Semantic HTML elements
     -$2ARIA labels and roles
     -$2Focus management
@@ -46,6 +49,7 @@ This guide covers accessibility (a11y) and internationalization (i18n) requireme
 
 
 1. Visual Design
+
       -$2Color contrast ratios
     -$2Text scaling
     -$2Responsive layouts
@@ -79,6 +83,7 @@ describe('Button Component', () => {
 });
 
 ```text
+
 ### 2. Cypress Accessibility Tests
 
 ```javascript
@@ -105,6 +110,7 @@ describe('Homepage Accessibility', () => {
 });
 
 ```text
+
 ### 3. Storybook Accessibility
 
 ```javascript
@@ -131,6 +137,7 @@ export default {
 };
 
 ```text
+
 ### 4. Lighthouse CI
 
 ```yaml
@@ -154,6 +161,7 @@ jobs:
           uploadArtifacts: true
 
 ```text
+
 ### 5. Pa11y Integration
 
 ```javascript
@@ -172,12 +180,14 @@ module.exports = {
 };
 
 ```text
+
 ## Internationalization (i18n)
 
 ### Setup Requirements
 
 
 1. Translation System
+
       -$2Translation management
     -$2Language detection
     -$2Fallback handling
@@ -185,6 +195,7 @@ module.exports = {
 
 
 1. Content Management
+
       -$2Text extraction
     -$2Translation workflow
     -$2Version control
@@ -194,6 +205,7 @@ module.exports = {
 
 
 1. Automated Tests
+
       -$2String extraction
     -$2Translation coverage
     -$2Format validation
@@ -201,6 +213,7 @@ module.exports = {
 
 
 1. Manual Tests
+
       -$2Visual inspection
     -$2Cultural validation
     -$2Context verification
@@ -210,6 +223,7 @@ module.exports = {
 
 
 1. Accessibility Guide
+
       -$2WCAG compliance
     -$2Testing procedures
     -$2Component guidelines
@@ -217,6 +231,7 @@ module.exports = {
 
 
 1. i18n Guide
+
       -$2Setup instructions
     -$2Translation workflow
     -$2Testing guidelines
@@ -226,6 +241,7 @@ module.exports = {
 
 
 1. Regular Audits
+
       -$2Accessibility scans
     -$2Translation updates
     -$2User feedback review
@@ -233,6 +249,7 @@ module.exports = {
 
 
 1. Updates
+
       -$2Component library
     -$2Translation strings
     -$2Documentation

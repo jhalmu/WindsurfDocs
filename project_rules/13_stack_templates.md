@@ -13,6 +13,7 @@ Before implementation, ask these questions:
 
 
 1. Frontend Requirements:
+
       -$2Framework preference? (React, Vue, Svelte, Angular)
     -$2SSR requirements? (Next.js, Nuxt, SvelteKit)
     -$2Static vs Dynamic?
@@ -20,6 +21,7 @@ Before implementation, ask these questions:
 
 
 1. Backend Requirements:
+
       -$2Language preference? (Node.js, Python, Go, Java, Rust)
     -$2Framework preference? (Express, FastAPI, Gin, Spring, Actix)
     -$2API architecture? (REST, GraphQL, gRPC)
@@ -27,6 +29,7 @@ Before implementation, ask these questions:
 
 
 1. Database Requirements:
+
       -$2Development database? (SQLite, PostgreSQL, MySQL)
     -$2Production database? (PostgreSQL, MySQL, MongoDB)
     -$2ORM preference?
@@ -34,6 +37,7 @@ Before implementation, ask these questions:
 
 
 1. Development Environment:
+
       -$2Local development setup?
     -$2CI/CD requirements?
     -$2Containerization needs?
@@ -64,9 +68,10 @@ services:
 
     environment:
         -$2NODE_ENV=development
-        -$2NEXT_PUBLIC_API_URL=<http://localhost:4000>
+        -$2NEXT_PUBLIC_API_URL=<<http://localhost:4000>>
 
 ```text
+
 #### Backend (Node.js/Express)
 
 ```yaml
@@ -110,6 +115,7 @@ volumes:
   postgres_dev_data:
 
 ```text
+
 ### Production Environment
 
 #### Frontend (Next.js)
@@ -129,9 +135,10 @@ services:
 
     environment:
         -$2NODE_ENV=production
-        -$2NEXT_PUBLIC_API_URL=<https://api.production.com>
+        -$2NEXT_PUBLIC_API_URL=<<https://api.production.com>>
 
 ```text
+
 #### Backend (Node.js/Express)
 
 ```yaml
@@ -152,6 +159,7 @@ services:
         -$2DATABASE_URL=${PROD_DATABASE_URL}
 
 ```text
+
 ## Template Path 2: Python/Vue Stack
 
 ### Development Environment
@@ -177,9 +185,10 @@ services:
 
     environment:
         -$2NODE_ENV=development
-        -$2VUE_APP_API_URL=<http://localhost:8000>
+        -$2VUE_APP_API_URL=<<http://localhost:8000>>
 
 ```text
+
 #### Backend (Python/FastAPI)
 
 ```yaml
@@ -223,6 +232,7 @@ volumes:
   mysql_dev_data:
 
 ```text
+
 ### Production Environment
 
 #### Frontend (Vue.js)
@@ -242,9 +252,10 @@ services:
 
     environment:
         -$2NODE_ENV=production
-        -$2VUE_APP_API_URL=<https://api.production.com>
+        -$2VUE_APP_API_URL=<<https://api.production.com>>
 
 ```text
+
 #### Backend (Python/FastAPI)
 
 ```yaml
@@ -265,6 +276,7 @@ services:
         -$2DATABASE_URL=${PROD_DATABASE_URL}
 
 ```text
+
 ## Container Orchestration
 
 > **Related Sections:**
@@ -320,6 +332,7 @@ spec:
           periodSeconds: 5
 
 ```text
+
 ### 2. Service Mesh Configuration
 
 ```yaml
@@ -356,6 +369,7 @@ spec:
           number: 80
 
 ```text
+
 ### 3. Helm Charts
 
 ```yaml
@@ -396,6 +410,7 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
 
 ```text
+
 ### 4. Docker Compose for Development
 
 ```yaml
@@ -444,6 +459,7 @@ volumes:
   redis_data:
 
 ```text
+
 ### 5. Multi-Stage Builds
 
 ```dockerfile
@@ -478,6 +494,7 @@ RUN npm ci --only=production
 CMD ["npm", "start"]
 
 ```text
+
 ## YAML Configuration Testing
 
 > **Related Testing Guides:**
@@ -488,7 +505,9 @@ CMD ["npm", "start"]
 ### 1. Pre-Deployment Validation
 
 ```bash
+```bash
 #!/bin/bash
+```
 
 # validate_yaml.sh
 
@@ -515,6 +534,7 @@ validate_yaml() {
 find . -type f \( -name "*.yml" -o -name "*.yaml" \) -exec bash -c 'validate_yaml "$0"' {} \;
 
 ```text
+
 ### 2. Schema Validation
 
 ```yaml
@@ -530,13 +550,16 @@ rules:
     check-keys: false
 
 ```text
+
 ### 3. Environment Variable Testing
 
 ```bash
 
 # test_env_substitution.sh
 
+```bash
 #!/bin/bash
+```
 
 test_env_substitution() {
     local file=$1
@@ -564,6 +587,7 @@ EOF
 find . -type f -name "docker-compose*.yml" -exec bash -c 'test_env_substitution "$0"' {} \;
 
 ```text
+
 ### 4. CI/CD Integration
 
 ```yaml
@@ -598,6 +622,7 @@ jobs:
         run: ./validate_yaml.sh
 
 ```text
+
 ## Database Migration Strategies
 
 ### Development to Production
@@ -605,7 +630,9 @@ jobs:
 #### PostgreSQL to PostgreSQL
 
 ```bash
+```bash
 #!/bin/bash
+```
 
 # migrate_postgres.sh
 
@@ -623,6 +650,7 @@ sed -i 's/devdb/proddb/g' dev_dump.sql
 psql -h production-host -U produser -d proddb < dev_dump.sql
 
 ```text
+
 #### SQLite to PostgreSQL
 
 ```python
@@ -645,10 +673,13 @@ def migrate_data():
     # Migration logic here
 
 ```text
+
 #### MySQL to PostgreSQL
 
 ```bash
+```bash
 #!/bin/bash
+```
 
 # migrate_mysql_to_postgres.sh
 
@@ -662,6 +693,7 @@ pgloader mysql://devuser:pass@localhost/devdb \
   postgresql://produser:pass@production-host/proddb
 
 ```text
+
 ## Environment-Specific Configurations
 
 ### Development
@@ -671,11 +703,12 @@ pgloader mysql://devuser:pass@localhost/devdb \
 # .env.development
 
 NODE_ENV=development
-API_URL=<http://localhost:8000>
+API_URL=<<http://localhost:8000>>
 DATABASE_URL=postgresql://user:pass@localhost:5432/devdb
 REDIS_URL=redis://localhost:6379
 
 ```text
+
 ### Production
 
 ```yaml
@@ -683,15 +716,17 @@ REDIS_URL=redis://localhost:6379
 # .env.production
 
 NODE_ENV=production
-API_URL=<https://api.production.com>
+API_URL=<<https://api.production.com>>
 DATABASE_URL=${PROD_DATABASE_URL}
 REDIS_URL=${PROD_REDIS_URL}
 
 ```text
+
 ## Implementation Guidelines
 
 
 1. **Start with Development Environment**
+
     -$2Set up local databases first
     -$2Configure development tools
     -$2Set up hot-reloading
@@ -699,6 +734,7 @@ REDIS_URL=${PROD_REDIS_URL}
 
 
 1. **Create Production Configuration**
+
     -$2Remove development dependencies
     -$2Configure production databases
     -$2Set up SSL/TLS
@@ -706,6 +742,7 @@ REDIS_URL=${PROD_REDIS_URL}
 
 
 1. **Set up CI/CD Pipeline**
+
     -$2Configure testing environments
     -$2Set up staging environment
     -$2Configure production deployment
@@ -713,6 +750,7 @@ REDIS_URL=${PROD_REDIS_URL}
 
 
 1. **Database Migration Process**
+
     -$2Create migration scripts
     -$2Test with sample data
     -$2Plan production migration
@@ -722,6 +760,7 @@ REDIS_URL=${PROD_REDIS_URL}
 
 
 1. **Development**
+
     -$2Use dummy data
     -$2Local environment variables
     -$2Disable sensitive features
@@ -729,6 +768,7 @@ REDIS_URL=${PROD_REDIS_URL}
 
 
 1. **Production**
+
     -$2Secure environment variables
     -$2Production SSL certificates
     -$2Database encryption
@@ -738,6 +778,7 @@ REDIS_URL=${PROD_REDIS_URL}
 
 
 1. **Development**
+
     -$2Local logging
     -$2Development metrics
     -$2Performance profiling
@@ -745,6 +786,7 @@ REDIS_URL=${PROD_REDIS_URL}
 
 
 1. **Production**
+
     -$2Production logging
     -$2Metrics collection
     -$2Alert system

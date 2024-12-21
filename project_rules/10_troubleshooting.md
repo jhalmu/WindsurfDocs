@@ -21,7 +21,6 @@ services:
     ports:
         -$2"9090:9090"
 
-
   grafana:
     image: grafana/grafana
     depends_on:
@@ -31,6 +30,7 @@ services:
         -$2"3000:3000"
 
 ```text
+
 #### ELK Stack
 
 ```yaml
@@ -49,6 +49,7 @@ services:
     image: docker.elastic.co/kibana/kibana:7.9.3
 
 ```text
+
 ### 2. Cloud Solutions
 
 #### AWS CloudWatch
@@ -61,6 +62,7 @@ Resources:
       DashboardName: AppMetrics
 
 ```text
+
 #### Google Cloud Monitoring
 
 ```yaml
@@ -71,12 +73,14 @@ monitoring:
       type: custom.googleapis.com/app
 
 ```text
+
 ## Database Troubleshooting
 
 ### Connection Issues
 
 
 1. **Common Problems**
+
     -$2Connection timeouts
     -$2Authentication failures
     -$2SSL/TLS issues
@@ -100,6 +104,7 @@ pg_isready -h localhost -p 5432
 tail -f /var/log/postgresql/postgresql-13-main.log
 
 ```text
+
 ### Performance Issues
 
 
@@ -114,6 +119,7 @@ WHERE state != 'idle'
 ORDER BY duration DESC;
 
 ```text
+
 1. **Index Problems**
 
 ```sql
@@ -125,6 +131,7 @@ WHERE heap_blks_hit + heap_blks_read > 0
 ORDER BY hit_ratio ASC;
 
 ```text
+
 ## Cloud Platform Issues
 
 ### AWS Troubleshooting
@@ -147,6 +154,7 @@ aws logs get-log-events \
     --log-stream-name your-stream
 
 ```text
+
 1. **RDS Problems**
 
 ```bash
@@ -163,6 +171,7 @@ aws rds download-db-log-file-portion \
     --log-file-name error/postgresql.log
 
 ```text
+
 ### GCP Troubleshooting
 
 
@@ -182,6 +191,7 @@ gcloud logging read "resource.type=cloud_run_revision" \
     --project your-project
 
 ```text
+
 1. **Cloud SQL Problems**
 
 ```bash
@@ -195,6 +205,7 @@ gcloud sql instances describe your-instance
 gcloud sql instances list-logs your-instance
 
 ```text
+
 ### Azure Troubleshooting
 
 
@@ -215,6 +226,7 @@ az containerapp logs show \
     --resource-group your-group
 
 ```text
+
 1. **Azure Database**
 
 ```bash
@@ -232,6 +244,7 @@ az postgres server-logs list \
     --resource-group your-group
 
 ```text
+
 ## Network Issues
 
 ### DNS Problems
@@ -251,6 +264,7 @@ traceroute your-domain.com
 dig +trace your-domain.com
 
 ```text
+
 ### SSL/TLS Issues
 
 ```bash
@@ -266,6 +280,7 @@ echo | openssl s_client -servername your-domain.com \
     openssl x509 -noout -dates
 
 ```text
+
 ## Application Issues
 
 ### Memory Problems
@@ -285,6 +300,7 @@ ps aux --sort=-%mem | head
 vmstat 1
 
 ```text
+
 ### CPU Issues
 
 ```bash
@@ -302,6 +318,7 @@ uptime
 pidstat 1
 
 ```text
+
 ## Recovery Procedures
 
 ### Database Recovery
@@ -320,6 +337,7 @@ pg_restore -d dbname backup.dump
 pg_basebackup -D /var/lib/postgresql/data
 
 ```text
+
 1. **Data Repair**
 
 ```sql
@@ -330,6 +348,7 @@ VACUUM ANALYZE tablename;
 REINDEX TABLE tablename;
 
 ```text
+
 ### Application Recovery
 
 
@@ -346,6 +365,7 @@ systemctl restart your-service
 systemctl force-restart your-service
 
 ```text
+
 1. **Cache Clear**
 
 ```bash
@@ -359,6 +379,7 @@ redis-cli FLUSHALL
 rm -rf /tmp/cache/*
 
 ```text
+
 ## System Monitoring
 
 ```bash
@@ -376,6 +397,7 @@ iotop
 iftop
 
 ```text
+
 ### Log Analysis
 
 ```bash
@@ -393,6 +415,7 @@ tail -f /var/log/syslog
 apache2ctl status
 
 ```text
+
 ## Prevention Measures
 
 ### Automated Checks
@@ -408,9 +431,10 @@ pg_isready -h localhost
 
 # Web server health
 
-curl -I <http://localhost>
+curl -I <<http://localhost>>
 
 ```text
+
 1. **Performance Monitoring**
 
 ```bash
@@ -424,6 +448,7 @@ sar -u 1 3
 netstat -tulpn
 
 ```text
+
 ### Backup Verification
 
 ```bash

@@ -17,6 +17,7 @@ COPY . .
 RUN npm run build
 
 ```text
+
 1. **Multi-Stage Build**
 
 ```dockerfile
@@ -37,6 +38,7 @@ COPY --from=builder /app/dist /app
 CMD ["npm", "start"]
 
 ```text
+
 ### Database Integration
 
 
@@ -54,6 +56,7 @@ services:
         -$2db-data:/var/lib/postgresql/data
 
 ```text
+
 1. **External Database**
 
 ```yaml
@@ -64,6 +67,7 @@ services:
       DATABASE_URL: ${EXTERNAL_DB_URL}
 
 ```text
+
 ## Cloud Platform Deployments
 
 ### AWS Deployment
@@ -83,6 +87,7 @@ Resources:
           -$2FARGATE
 
 ```text
+
 1. **RDS Setup**
 
 ```yaml
@@ -94,6 +99,7 @@ Resources:
       EngineVersion: 13.7
 
 ```text
+
 ### Google Cloud Platform
 
 
@@ -109,6 +115,7 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/app']
 
 ```text
+
 1. **Cloud SQL**
 
 ```yaml
@@ -120,6 +127,7 @@ resources:
     databaseVersion: POSTGRES_13
 
 ```text
+
 ### Azure Deployment
 
 
@@ -135,6 +143,7 @@ resources:
             -$2image: ${REGISTRY}/app:latest
 
 ```text
+
 1. **Azure Database**
 
 ```yaml
@@ -145,6 +154,7 @@ resources:
       version: '13'
 
 ```text
+
 ## CI/CD Integration
 
 ### GitHub Actions
@@ -174,6 +184,7 @@ jobs:
           esac
 
 ```text
+
 ### GitLab CI
 
 ```yaml
@@ -193,6 +204,7 @@ deploy:
       esac
 
 ```text
+
 ## Monitoring Setup
 
 ### Container Monitoring
@@ -204,6 +216,7 @@ deploy:
 docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"
 
 ```text
+
 1. **Prometheus + Grafana**
 
 ```yaml
@@ -213,13 +226,13 @@ services:
     volumes:
         -$2./prometheus.yml:/etc/prometheus/prometheus.yml
 
-
   grafana:
     image: grafana/grafana
     depends_on:
         -$2prometheus
 
 ```text
+
 ### Cloud Monitoring
 
 
@@ -233,6 +246,7 @@ Resources:
       DashboardName: AppMetrics
 
 ```text
+
 1. **Google Cloud Monitoring**
 
 ```yaml
@@ -243,6 +257,7 @@ monitoring:
       type: custom.googleapis.com/app
 
 ```text
+
 1. **Azure Monitor**
 
 ```yaml
@@ -253,6 +268,7 @@ resources:
       Application_Type: web
 
 ```text
+
 ## Backup Strategies
 
 ### Container Backups
@@ -267,6 +283,7 @@ docker run --rm \
   alpine tar cvf /backup/backup.tar /app/data
 
 ```text
+
 1. **Database Backups**
 
 ```yaml
@@ -281,6 +298,7 @@ services:
       pg_dump -U postgres -d mydb > /backup/dump.sql
 
 ```text
+
 ### Cloud Backups
 
 
@@ -294,6 +312,7 @@ Resources:
     Type: AWS::Backup::BackupPlan
 
 ```text
+
 1. **GCP Backup**
 
 ```yaml
@@ -304,6 +323,7 @@ resources:
       instance: ${DATABASE_INSTANCE}
 
 ```text
+
 1. **Azure Backup**
 
 ```yaml

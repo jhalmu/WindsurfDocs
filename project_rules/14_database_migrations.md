@@ -47,6 +47,7 @@ def migrate_tables():
         )
 
 ```text
+
 #### SQLite to MySQL
 
 ```python
@@ -86,12 +87,15 @@ def migrate_tables():
         )
 
 ```text
+
 ### 2. PostgreSQL Migrations
 
 #### PostgreSQL Version Upgrade
 
 ```bash
+```bash
 #!/bin/bash
+```
 
 # postgres_upgrade.sh
 
@@ -117,10 +121,13 @@ systemctl stop postgresql-${NEW_VERSION}
   --check
 
 ```text
+
 #### Cross-Server Migration
 
 ```bash
+```bash
 #!/bin/bash
+```
 
 # postgres_cross_server.sh
 
@@ -150,6 +157,7 @@ psql -h ${DEST_HOST} -U ${DEST_USER} -d ${DEST_DB} < schema.sql
 psql -h ${DEST_HOST} -U ${DEST_USER} -d ${DEST_DB} < data.sql
 
 ```text
+
 ### 3. MySQL Migrations
 
 #### MySQL to PostgreSQL with Schema Conversion
@@ -200,6 +208,7 @@ def convert_schema():
         pg_conn.commit()
 
 ```text
+
 ### 4. MongoDB to SQL Migrations
 
 #### MongoDB to PostgreSQL
@@ -243,6 +252,7 @@ def migrate_collection(collection_name):
     df.to_sql(collection_name, pg_engine, if_exists='replace', index=False)
 
 ```text
+
 ## Migration Verification Tools
 
 ### 1. Data Integrity Checker
@@ -267,6 +277,7 @@ def verify_data_integrity(source_conn, target_conn, table_name):
         raise ValueError(f"Data checksum mismatch in {table_name}")
 
 ```text
+
 ### 2. Performance Comparison
 
 ```python
@@ -297,12 +308,15 @@ def compare_query_performance(source_conn, target_conn, test_queries):
     return pd.DataFrame(results)
 
 ```text
+
 ## Rollback Strategies
 
 ### 1. Point-in-Time Recovery
 
 ```bash
+```bash
 #!/bin/bash
+```
 
 # rollback_to_point.sh
 
@@ -317,10 +331,13 @@ pg_restore --target-timestamp="${TIMESTAMP}" -d dbname backup.dump
 mysqlbinlog --stop-datetime="${TIMESTAMP}" binlog.* | mysql -u user -p dbname
 
 ```text
+
 ### 2. Full Database Rollback
 
 ```bash
+```bash
 #!/bin/bash
+```
 
 # full_rollback.sh
 

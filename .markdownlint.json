@@ -3,12 +3,19 @@
   "MD013": false,
   "MD033": false,
   "MD041": false,
-  "MD002": false,
-  "MD014": false,
-  "MD026": false,
-  "MD029": false,
-  "MD036": false,
   "MD024": false,
-  "MD045": false,
+  "MD026": {
+    "punctuation": ".,;:!"
+  },
+  "MD029": false,
+  "MD012": false,
+  "MD009": false,
+  "MD022": false,
+  "MD032": false,
+  "MD028": false,
+  "MD031": false,
+  "MD040": false,
+  "MD003": false,
+  "MD019": false,
   "MD046": false
 }

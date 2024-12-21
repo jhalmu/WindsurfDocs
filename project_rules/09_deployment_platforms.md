@@ -1,10 +1,10 @@
-# Deployment Platforms Guide
 
+# Deployment Platforms Guide
 
 ## Docker Deployment
 
-
 ### Container Setup
+
 
 1. **Base Configuration**
 
@@ -15,12 +15,14 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-```
 
-2. **Multi-Stage Build**
+```text
+1. **Multi-Stage Build**
 
 ```dockerfile
+
 # Build stage
+
 FROM node:latest AS builder
 WORKDIR /app
 COPY package*.json ./
@@ -29,13 +31,14 @@ COPY . .
 RUN npm run build
 
 # Production stage
+
 FROM node:alpine
 COPY --from=builder /app/dist /app
 CMD ["npm", "start"]
-```
 
-
+```text
 ### Database Integration
+
 
 1. **Containerized Database**
 
@@ -48,10 +51,10 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     volumes:
-      - db-data:/var/lib/postgresql/data
-```
+        -$2db-data:/var/lib/postgresql/data
 
-2. **External Database**
+```text
+1. **External Database**
 
 ```yaml
 version: '3.8'
@@ -59,13 +62,12 @@ services:
   app:
     environment:
       DATABASE_URL: ${EXTERNAL_DB_URL}
-```
 
-
+```text
 ## Cloud Platform Deployments
 
-
 ### AWS Deployment
+
 
 1. **ECS Fargate**
 
@@ -78,10 +80,10 @@ Resources:
     Type: AWS::ECS::TaskDefinition
     Properties:
       RequiresCompatibilities:
-        - FARGATE
-```
+          -$2FARGATE
 
-2. **RDS Setup**
+```text
+1. **RDS Setup**
 
 ```yaml
 Resources:
@@ -90,33 +92,36 @@ Resources:
     Properties:
       Engine: postgres
       EngineVersion: 13.7
-```
 
-
+```text
 ### Google Cloud Platform
+
 
 1. **Cloud Run**
 
 ```yaml
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/app', '.']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/app']
-```
+  -$2name: 'gcr.io/cloud-builders/docker'
 
-2. **Cloud SQL**
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/app', '.']
+  -$2name: 'gcr.io/cloud-builders/docker'
+
+  args: ['push', 'gcr.io/$PROJECT_ID/app']
+
+```text
+1. **Cloud SQL**
 
 ```yaml
 resources:
-- name: database
+  -$2name: database
+
   type: gcp-types/sqladmin-v1beta4:instances
   properties:
     databaseVersion: POSTGRES_13
-```
 
-
+```text
 ### Azure Deployment
+
 
 1. **Container Apps**
 
@@ -127,10 +132,10 @@ resources:
     properties:
       template:
         containers:
-          - image: ${REGISTRY}/app:latest
-```
+            -$2image: ${REGISTRY}/app:latest
 
-2. **Azure Database**
+```text
+1. **Azure Database**
 
 ```yaml
 resources:
@@ -138,11 +143,9 @@ resources:
     type: Microsoft.DBforPostgreSQL/flexibleServers
     properties:
       version: '13'
-```
 
-
+```text
 ## CI/CD Integration
-
 
 ### GitHub Actions
 
@@ -158,8 +161,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build and Deploy
+        -$2uses: actions/checkout@v2
+        -$2name: Build and Deploy
+
         env:
           PLATFORM: ${{ secrets.DEPLOY_PLATFORM }}
         run: |
@@ -168,56 +172,56 @@ jobs:
             "gcp") ./deploy/gcp.sh ;;
             "azure") ./deploy/azure.sh ;;
           esac
-```
 
-
+```text
 ### GitLab CI
 
 ```yaml
 stages:
-  - build
-  - test
-  - deploy
+    -$2build
+    -$2test
+    -$2deploy
 
 deploy:
   stage: deploy
   script:
-    - case $DEPLOY_PLATFORM in
+      -$2case $DEPLOY_PLATFORM in
+
         "aws") ./deploy/aws.sh ;;
         "gcp") ./deploy/gcp.sh ;;
         "azure") ./deploy/azure.sh ;;
       esac
-```
 
-
+```text
 ## Monitoring Setup
 
-
 ### Container Monitoring
+
 
 1. **Docker Stats**
 
 ```bash
 docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"
-```
 
-2. **Prometheus + Grafana**
+```text
+1. **Prometheus + Grafana**
 
 ```yaml
 services:
   prometheus:
     image: prom/prometheus
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-  
+        -$2./prometheus.yml:/etc/prometheus/prometheus.yml
+
+
   grafana:
     image: grafana/grafana
     depends_on:
-      - prometheus
-```
+        -$2prometheus
 
-
+```text
 ### Cloud Monitoring
+
 
 1. **AWS CloudWatch**
 
@@ -227,18 +231,19 @@ Resources:
     Type: AWS::CloudWatch::Dashboard
     Properties:
       DashboardName: AppMetrics
-```
 
-2. **Google Cloud Monitoring**
+```text
+1. **Google Cloud Monitoring**
 
 ```yaml
 monitoring:
   metrics:
-    - name: custom.googleapis.com/app/requests
-      type: custom.googleapis.com/app
-```
+      -$2name: custom.googleapis.com/app/requests
 
-3. **Azure Monitor**
+      type: custom.googleapis.com/app
+
+```text
+1. **Azure Monitor**
 
 ```yaml
 resources:
@@ -246,13 +251,12 @@ resources:
     type: Microsoft.Monitor/components
     properties:
       Application_Type: web
-```
 
-
+```text
 ## Backup Strategies
 
-
 ### Container Backups
+
 
 1. **Volume Backups**
 
@@ -261,23 +265,24 @@ docker run --rm \
   --volumes-from app \
   -v $(pwd):/backup \
   alpine tar cvf /backup/backup.tar /app/data
-```
 
-2. **Database Backups**
+```text
+1. **Database Backups**
 
 ```yaml
 services:
   backup:
     image: postgres:latest
     volumes:
-      - db-data:/source
-      - ./backups:/backup
+        -$2db-data:/source
+        -$2./backups:/backup
+
     command: |
       pg_dump -U postgres -d mydb > /backup/dump.sql
-```
 
-
+```text
 ### Cloud Backups
+
 
 1. **AWS Backup**
 
@@ -287,9 +292,9 @@ Resources:
     Type: AWS::Backup::BackupVault
   BackupPlan:
     Type: AWS::Backup::BackupPlan
-```
 
-2. **GCP Backup**
+```text
+1. **GCP Backup**
 
 ```yaml
 resources:
@@ -297,9 +302,9 @@ resources:
     type: gcp-types/sqladmin-v1beta4:backupRuns
     properties:
       instance: ${DATABASE_INSTANCE}
-```
 
-3. **Azure Backup**
+```text
+1. **Azure Backup**
 
 ```yaml
 resources:

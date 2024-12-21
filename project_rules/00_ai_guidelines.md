@@ -1,208 +1,169 @@
+
 # AI Development Guidelines
 
-
 > **Related Guides:**
-
 > - [02_testing_setup.md](02_testing_setup.md) - Comprehensive testing strategies, including AI-assisted test generation and validation
 > - [03_development_and_maintenance.md](03_development_and_maintenance.md) - Development workflow integration with AI tools and maintenance procedures
 > - [13_stack_templates.md](13_stack_templates.md) - Technology stack templates and configurations for AI services
-
 > For a complete overview of documentation structure, see [00_documentation_index.md](00_documentation_index.md)
-
 
 ## Core Principles
 
 
 1. **Project Understanding**
+      -$2Read and understand project requirements
+    -$2Review existing codebase
+    -$2Identify technical constraints
+    -$2Consider scalability needs
 
-   - Read and understand project requirements
-   - Review existing codebase
-   - Identify technical constraints
-   - Consider scalability needs
 
-
-2. **Communication Protocol**
-
-   - Clear, concise responses
-   - Proactive problem identification
-   - Regular progress updates
-   - Technical rationale for decisions
-
+1. **Communication Protocol**
+      -$2Clear, concise responses
+    -$2Proactive problem identification
+    -$2Regular progress updates
+    -$2Technical rationale for decisions
 
 ## Decision Making Process
 
-
 ### 1. Initial Assessment Questions
-
 
 #### Database Requirements
 
 ```markdown
-- Expected data volume?
-- Need for replication?
-- Backup frequency?
-- Performance requirements?
-- Security constraints?
-```
+  -$2Expected data volume?
+  -$2Need for replication?
+  -$2Backup frequency?
+  -$2Performance requirements?
+  -$2Security constraints?
 
-
+```text
 #### Deployment Environment
 
 ```markdown
-- Local development?
-- Production server?
-- Cloud provider preference?
-- Scaling requirements?
-```
+  -$2Local development?
+  -$2Production server?
+  -$2Cloud provider preference?
+  -$2Scaling requirements?
 
-
+```text
 #### Security Requirements
 
 ```markdown
-- Authentication needs?
-- Authorization levels?
-- Data encryption requirements?
-- Compliance requirements?
-```
+  -$2Authentication needs?
+  -$2Authorization levels?
+  -$2Data encryption requirements?
+  -$2Compliance requirements?
 
-
+```text
 ### 2. Technology Selection
-
 
 #### Frontend Framework
 
 ```markdown
-- SPA vs MPA?
-- SSR requirements?
-- SEO importance?
-- Browser compatibility?
-```
+  -$2SPA vs MPA?
+  -$2SSR requirements?
+  -$2SEO importance?
+  -$2Browser compatibility?
 
-
+```text
 #### Backend Architecture
 
 ```markdown
-- Monolith vs Microservices?
-- API requirements?
-- Real-time needs?
-- Integration requirements?
-```
+  -$2Monolith vs Microservices?
+  -$2API requirements?
+  -$2Real-time needs?
+  -$2Integration requirements?
 
-
+```text
 ## Implementation Guidelines
 
-
 ### 1. Code Quality Standards
-
-- Follow project style guide
-- Write self-documenting code
-- Include comprehensive comments
-- Add type annotations
-
+  -$2Follow project style guide
+  -$2Write self-documenting code
+  -$2Include comprehensive comments
+  -$2Add type annotations
 
 ### 2. Testing Requirements
-
-- Unit tests for core functionality
-- Integration tests for APIs
-- End-to-end tests for critical paths
-- Performance benchmarks
-
+  -$2Unit tests for core functionality
+  -$2Integration tests for APIs
+  -$2End-to-end tests for critical paths
+  -$2Performance benchmarks
 
 ### 3. Documentation Standards
-
-- API documentation
-- Setup instructions
-- Deployment guides
-- Troubleshooting guides
-
+  -$2API documentation
+  -$2Setup instructions
+  -$2Deployment guides
+  -$2Troubleshooting guides
 
 ## Project Context Management
 
-
 ### 1. State Tracking
-
-- Current development phase
-- Active feature branches
-- Recent changes history
-- Outstanding issues
-
+  -$2Current development phase
+  -$2Active feature branches
+  -$2Recent changes history
+  -$2Outstanding issues
 
 ### 2. Environment Context
-
-- Development setup
-- Testing environment
-- Production status
-- Tool versions
-
+  -$2Development setup
+  -$2Testing environment
+  -$2Production status
+  -$2Tool versions
 
 ### 3. Documentation State
-
-- Latest updates
-- API changes
-- Architecture decisions
-- Technical debt
-
+  -$2Latest updates
+  -$2API changes
+  -$2Architecture decisions
+  -$2Technical debt
 
 ## Interaction Patterns
 
-
 ### 1. User Communication
-
-- Clear explanations
-- Technical accuracy
-- Progressive disclosure
-- Actionable suggestions
-
+  -$2Clear explanations
+  -$2Technical accuracy
+  -$2Progressive disclosure
+  -$2Actionable suggestions
 
 ### 2. Problem Solving
-
-- Systematic approach
-- Root cause analysis
-- Solution alternatives
-- Implementation plan
-
+  -$2Systematic approach
+  -$2Root cause analysis
+  -$2Solution alternatives
+  -$2Implementation plan
 
 ### 3. Code Reviews
-
-- Security checks
-- Performance review
-- Style compliance
-- Best practices
-
+  -$2Security checks
+  -$2Performance review
+  -$2Style compliance
+  -$2Best practices
 
 ## Quality Assurance
-
 
 ### 1. Code Quality
 
 ```markdown
-- Clean code principles
-- SOLID principles
-- DRY principle
-- KISS principle
-```
+  -$2Clean code principles
+  -$2SOLID principles
+  -$2DRY principle
+  -$2KISS principle
 
-
+```text
 ### 2. Security
 
 ```markdown
-- Input validation
-- Output sanitization
-- Authentication
-- Authorization
-```
+  -$2Input validation
+  -$2Output sanitization
+  -$2Authentication
+  -$2Authorization
 
-
+```text
 ### 3. Performance
 
 ```markdown
-- Response times
-- Resource usage
-- Scalability
-- Optimization
-```
+  -$2Response times
+  -$2Resource usage
+  -$2Scalability
+  -$2Optimization
 
-
+```text
 ## AI Integration and Tooling
 
 > **Related Sections:**
@@ -214,7 +175,6 @@
 > - Review deployment guide for AI service configuration
 > - Set up monitoring for AI service health
 > - Implement accessibility checks in AI workflows
-
 
 ### 1. Configuration
 
@@ -240,9 +200,8 @@ try {
   logger.error('AI Service Error:', error);
   fallbackHandler(error);
 }
-```
 
-
+```text
 ### 2. Integration Points
 
 ```javascript
@@ -263,9 +222,8 @@ async function reviewCode(pr) {
   const analysis = await aiService.review(pr.diff);
   return formatReview(analysis);
 }
-```
 
-
+```text
 ### 3. Security Measures
 
 ```javascript
@@ -295,9 +253,8 @@ const accessControl = {
     reviewer: ['review']
   }
 };
-```
 
-
+```text
 ### 4. Response Processing
 
 ```javascript
@@ -322,9 +279,8 @@ function formatResponse(response) {
     suggestions: formatSuggestions(response.suggestions)
   };
 }
-```
 
-
+```text
 ### 5. Testing Integration
 
 ```javascript
@@ -340,9 +296,8 @@ describe('AI Service', () => {
     expect(errorResponse.error).toBeDefined();
   });
 });
-```
 
-
+```text
 ## AI-Driven Testing
 
 > **Related Testing Guides:**
@@ -354,7 +309,6 @@ describe('AI Service', () => {
 > - Integrate AI testing with CI/CD pipeline
 > - Set up automated test generation
 > - Configure test result analysis
-
 
 ### 1. Test Generation
 
@@ -374,9 +328,8 @@ async function generatePropertyTests(schema) {
   const properties = await aiService.analyzeSchema(schema);
   return generateTestCases(properties);
 }
-```
 
-
+```text
 ### 2. Test Maintenance
 
 ```javascript
@@ -391,9 +344,8 @@ async function analyzeCoverage(testResults) {
   const gaps = await aiService.analyzeCoverageGaps(testResults);
   return suggestNewTests(gaps);
 }
-```
 
-
+```text
 ### 3. Regression Testing
 
 ```javascript
@@ -408,9 +360,8 @@ async function optimizeTestSuite(testHistory) {
   const analysis = await aiService.analyzeTestEffectiveness(testHistory);
   return suggestOptimizations(analysis);
 }
-```
 
-
+```text
 ### 4. Performance Testing
 
 ```javascript
@@ -425,9 +376,8 @@ async function generateBenchmarks(metrics) {
   const benchmarks = await aiService.analyzePerfMetrics(metrics);
   return generatePerfTests(benchmarks);
 }
-```
 
-
+```text
 ### 5. Security Testing
 
 ```javascript
@@ -442,69 +392,52 @@ async function generatePenTests(api) {
   const attacks = await aiService.analyzePotentialAttacks(api);
   return generatePenTestCases(attacks);
 }
-```
 
-
+```text
 ## Continuous Improvement
 
-
 ### 1. Learning
-
-- New technologies
-- Best practices
-- Security updates
-- Performance techniques
-
+  -$2New technologies
+  -$2Best practices
+  -$2Security updates
+  -$2Performance techniques
 
 ### 2. Feedback Loop
-
-- User feedback
-- Performance metrics
-- Error tracking
-- Usage patterns
-
+  -$2User feedback
+  -$2Performance metrics
+  -$2Error tracking
+  -$2Usage patterns
 
 ### 3. Updates
-
-- Documentation
-- Dependencies
-- Security patches
-- Feature enhancements
-
+  -$2Documentation
+  -$2Dependencies
+  -$2Security patches
+  -$2Feature enhancements
 
 ## Error Handling
 
-
 ### 1. Prevention
-
-- Input validation
-- Type checking
-- Boundary testing
-- Edge cases
-
+  -$2Input validation
+  -$2Type checking
+  -$2Boundary testing
+  -$2Edge cases
 
 ### 2. Recovery
-
-- Graceful degradation
-- Fallback options
-- Data recovery
-- State restoration
-
+  -$2Graceful degradation
+  -$2Fallback options
+  -$2Data recovery
+  -$2State restoration
 
 ## Maintenance
 
-
 ### 1. Code
-
-- Regular refactoring
-- Technical debt reduction
-- Performance optimization
-- Security updates
-
+  -$2Regular refactoring
+  -$2Technical debt reduction
+  -$2Performance optimization
+  -$2Security updates
 
 ### 2. Documentation
-
-- Keep up-to-date
-- Version tracking
-- Change history
-- Usage examples
+  -$2Keep up-to-date
+  -$2Version tracking
+  -$2Change history
+  -$2Usage examples
